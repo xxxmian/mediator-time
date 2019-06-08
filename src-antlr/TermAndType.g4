@@ -49,6 +49,8 @@ value:
     |   scopedID '.' PORTVAR_SUFFIX                                 # portVarValue
     |   scopedID                                                    # idValue
     |   'null'                                                      # nullValue
+    |   CLOCK                                                       # clockValue
+    |   COUNTER                                                     # counterValue
     ;
 
 type:   '(' type ')'                                                # bracketType
@@ -67,6 +69,8 @@ type:   '(' type ')'                                                # bracketTyp
     |   'NULL'                                                      # nullType
     |   scopedID                                                    # idType
     |   scopedID ('<' typeorvalue (',' typeorvalue )* '>')?         # templateType
+    |   'clock'                                                     # clockType
+    |   'counter'                                                   # counterType
 ;
 
 typeorvalue: type | value ;
@@ -78,6 +82,8 @@ scopedID:
 fragment DIGIT  : [0-9] ;
 INT             : DIGIT+ ;
 REAL            : (INT)? '.' DIGIT+ ;
+CLOCK           : REAL ;
+COUNTER         : INT ;
 fragment LETTER : [a-zA-Z];
 STRING          : '"' .*? '"' ;
 BOOLEAN         : 'true' | 'false' ;

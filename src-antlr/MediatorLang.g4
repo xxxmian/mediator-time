@@ -23,6 +23,10 @@ statement:
         (thenstmt=statement | '{' thenstmts=statements '}')
         ('else' (elsestmt=statement | '{' elsestmts=statements '}'))?       # iteStatement
     |   'assert' term ';'                                                   # assertStatement
+    |   'reset' term ';'                                                    # resetStatement
+    |   'pause'  term ';'                                                   # pauseStatement
+    |   'continue' term ';'                                                 # continueStatement
+    |   'increase' term ';'                                                 # increaseStatement
 ;
 
 statements:

@@ -10,6 +10,7 @@ import org.fmgroup.mediator.language.Program;
 import org.fmgroup.mediator.plugin.generator.FileSet;
 import org.fmgroup.mediator.plugin.generator.Generator;
 import org.fmgroup.mediator.plugin.command.Command;
+import org.fmgroup.mediator.plugins.generators.Run.RunException;
 import org.fmgroup.mediator.plugins.generators.arduino.ArduinoGeneratorException;
 import org.fmgroup.mediator.plugins.generators.prism.PrismGeneratorException;
 
@@ -97,10 +98,12 @@ public class CommandGenerate implements Command {
     }
 
     @Override
-    public void run(Namespace args) throws FileNotFoundException, PrismGeneratorException {
+    public void run(Namespace args) throws FileNotFoundException, PrismGeneratorException, RunException {
         File medSource = args.get("FILE");
 
         Program prog = Program.parseFile(medSource.getPath());
+        System.out.println("mediator Source code analysis succeeded！");
+        System.out.println("The code is being automatically generated as Java code");
         List<Class<Generator>> generators = UtilClass.getGenerators();
         String entityName = args.get("entity");
 

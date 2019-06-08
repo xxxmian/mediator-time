@@ -258,7 +258,7 @@ public class Program implements RawElement, Scope {
                 file = Paths.get(path, filename).toFile();
             }
         }
-
+        java.lang.System.out.println("the name of file is "+file.getName());
         if (file == null) {
             throw new FileNotFoundException(String.format(
                     "cannot locate %s in all paths",

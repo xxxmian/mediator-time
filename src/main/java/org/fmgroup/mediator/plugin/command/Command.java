@@ -4,6 +4,7 @@ import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.Namespace;
 import org.fmgroup.mediator.plugin.Plugin;
+import org.fmgroup.mediator.plugins.generators.Run.RunException;
 import org.fmgroup.mediator.plugins.generators.prism.PrismGeneratorException;
 
 import java.io.FileNotFoundException;
@@ -32,5 +33,5 @@ public interface Command extends Plugin {
         return parser;
     }
 
-    void run (Namespace args) throws IOException, PrismGeneratorException;
+    void run (Namespace args) throws IOException, PrismGeneratorException, RunException;
 }

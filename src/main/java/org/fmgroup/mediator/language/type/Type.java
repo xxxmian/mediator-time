@@ -55,6 +55,10 @@ public interface Type extends RawElement {
             return new StructType().fromContext(tc, parent);
         if (tc instanceof MediatorLangParser.EnumTypeContext)
             return new EnumType().fromContext(tc, parent);
+        if (tc instanceof MediatorLangParser.ClockTypeContext)
+            return new ClockType().fromContext(tc, parent);
+        if (tc instanceof MediatorLangParser.CounterTypeContext)
+            return new CounterType().fromContext(tc, parent);
 
         throw ValidationException.UnregisteredType(tc.getClass().toString());
     }

@@ -3,16 +3,20 @@ automaton WrestlingContract (Deposit1, Deposit2, withDraw1, withDraw2: out int, 
     		player1Played,player2Played,gameFinished: int 0..1 init 0;
     		player1Deposit,player2Deposit,gains: int init 0;
     		_test_: int init 0;
+    		time1 : clock;
+
    	}
     transitions {
 	        !Deposit1.reqRead && player1Played==0 && gameFinished==0 -> Deposit1.reqRead = true;
 	        !Deposit2.reqRead && player2Played==0 && gameFinished==0 -> Deposit2.reqRead = true;
             (Deposit1.reqRead && Deposit1.reqWrite &&gameFinished==0) -> {
                     sync Deposit1;
+                    time1 = 0;
                     player1Deposit = player1Deposit +Deposit1.value;
                     player1Played = 1;
             }
             (Deposit2.reqRead && Deposit2.reqWrite &&gameFinished==0) -> {
+
                                 sync Deposit2;
                                 player2Deposit = player2Deposit+Deposit2.value;
                                 player2Played = 1;

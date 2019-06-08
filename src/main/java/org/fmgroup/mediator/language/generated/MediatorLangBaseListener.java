@@ -1,4 +1,4 @@
-// Generated from /Users/liyi/Dropbox/Projects/Mediator/src-antlr/MediatorLang.g4 by ANTLR 4.7
+// Generated from /Users/zhangqi/Desktop/mediator-master/src-antlr/MediatorLang.g4 by ANTLR 4.7.2
 package org.fmgroup.mediator.language.generated;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -119,6 +119,54 @@ public class MediatorLangBaseListener implements MediatorLangListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitAssertStatement(MediatorLangParser.AssertStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterResetStatement(MediatorLangParser.ResetStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitResetStatement(MediatorLangParser.ResetStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPauseStatement(MediatorLangParser.PauseStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPauseStatement(MediatorLangParser.PauseStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterContinueStatement(MediatorLangParser.ContinueStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitContinueStatement(MediatorLangParser.ContinueStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIncreaseStatement(MediatorLangParser.IncreaseStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIncreaseStatement(MediatorLangParser.IncreaseStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -832,6 +880,30 @@ public class MediatorLangBaseListener implements MediatorLangListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterClockValue(MediatorLangParser.ClockValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitClockValue(MediatorLangParser.ClockValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCounterValue(MediatorLangParser.CounterValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCounterValue(MediatorLangParser.CounterValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterBracketType(MediatorLangParser.BracketTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -952,6 +1024,18 @@ public class MediatorLangBaseListener implements MediatorLangListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterClockType(MediatorLangParser.ClockTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitClockType(MediatorLangParser.ClockTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterListType(MediatorLangParser.ListTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -995,6 +1079,18 @@ public class MediatorLangBaseListener implements MediatorLangListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStructType(MediatorLangParser.StructTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCounterType(MediatorLangParser.CounterTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCounterType(MediatorLangParser.CounterTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

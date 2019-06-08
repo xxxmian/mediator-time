@@ -1,0 +1,96 @@
+
+
+
+
+automaton engine (speed : in int) {
+    variables{
+        		pinDirection : int;
+        		pinSpeed : int;
+
+       }
+    transitions {
+        !speed.reqRead -> speed.reqRead = true;
+        speed.reqRead && speed.reqWrite -> {
+            sync speed;
+            if (speed.value > 0) {
+                pinDirection = 1;
+                pinSpeed = speed.value;
+            } else {
+                pinDirection = 0;
+                pinSpeed = -speed.value;
+            }
+        }
+    }
+}
+
+
+automaton speeder (act: in int, motor_l, motor_r: out int) {
+    transitions {
+        (act.reqWrite != motor_l.reqWrite) -> {
+            motor_l.reqWrite = act.reqWrite;
+            motor_r.reqWrite = act.reqWrite;
+        }
+
+        ((motor_l.reqRead && motor_r.reqRead) != act.reqRead) -> act.reqRead = motor_l.reqRead && motor_r.reqRead;
+
+        act.reqRead && act.reqWrite -> {
+            sync act;
+            if (act.value == 1) {
+                motor_l.value = 80;
+                motor_r.value = 80;
+            } else if (act.value == -1) {
+                motor_l.value = -80;
+                motor_r.value = -80;
+            } else if (act.value == 0) {
+                motor_l.value = 0;
+                motor_r.value = 0;
+            }
+
+            sync motor_l, motor_r;
+        }
+    }
+}
+
+automaton ultraSonicDist (dist: out double) {
+    variables{
+        time1 : clock;
+        time2 : counter;
+
+    }
+    transitions {
+        !dist.reqWrite -> dist.reqWrite = true;
+        dist.reqRead || time1 >=5 -> {
+            sync dist;
+            reset time1;
+            increase time2;
+
+        }
+    }
+}
+
+automaton controller (dist: in double init 0, act: out int) {
+    transitions {
+        !act.reqWrite -> act.reqWrite = true;
+        act.reqRead -> {
+            sync dist;
+            if (dist.value < 10){
+                act.value = 0;
+            }
+            sync act;
+        }
+    }
+}
+
+system testbench() {
+    components {
+        m1 : engine;
+        m2 : engine;
+        c  : controller;
+    }
+
+    connections {
+        speeder(c.act, m1.speed, m2.speed);
+        ultraSonicDist(c.dist);
+    }
+}
+

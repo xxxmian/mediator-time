@@ -24,7 +24,18 @@ public interface Statement extends RawElement {
         if (sc instanceof MediatorLangParser.ReturnStatementContext) {
             return new ReturnStatement().fromContext(sc, parent);
         }
-
+        if (sc instanceof MediatorLangParser.ResetStatementContext) {
+            return new ResetStatement().fromContext(sc, parent);
+        }
+        if (sc instanceof MediatorLangParser.IncreaseStatementContext) {
+            return new IncreaseStatement().fromContext(sc, parent);
+        }
+        if (sc instanceof MediatorLangParser.PauseStatementContext) {
+            return new PauseStatement().fromContext(sc, parent);
+        }
+        if (sc instanceof MediatorLangParser.ContinueStatementContext) {
+            return new ContinueStatement().fromContext(sc, parent);
+        }
         throw ValidationException.UnregisteredStatement(sc.getClass().toString());
     }
 

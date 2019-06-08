@@ -42,7 +42,7 @@ public class EnumValue implements Value {
 
     @Override
     public String toString() {
-        return identifier;
+        return reference.toString() + "." + identifier;
     }
 
     @Override

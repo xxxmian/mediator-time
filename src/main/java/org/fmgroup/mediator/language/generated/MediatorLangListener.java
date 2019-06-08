@@ -1,4 +1,4 @@
-// Generated from /Users/liyi/Dropbox/Projects/Mediator/src-antlr/MediatorLang.g4 by ANTLR 4.7
+// Generated from /Users/zhangqi/Desktop/mediator-master/src-antlr/MediatorLang.g4 by ANTLR 4.7.2
 package org.fmgroup.mediator.language.generated;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -107,6 +107,54 @@ public interface MediatorLangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAssertStatement(MediatorLangParser.AssertStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code resetStatement}
+	 * labeled alternative in {@link MediatorLangParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterResetStatement(MediatorLangParser.ResetStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code resetStatement}
+	 * labeled alternative in {@link MediatorLangParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitResetStatement(MediatorLangParser.ResetStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code pauseStatement}
+	 * labeled alternative in {@link MediatorLangParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterPauseStatement(MediatorLangParser.PauseStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code pauseStatement}
+	 * labeled alternative in {@link MediatorLangParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitPauseStatement(MediatorLangParser.PauseStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code continueStatement}
+	 * labeled alternative in {@link MediatorLangParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterContinueStatement(MediatorLangParser.ContinueStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code continueStatement}
+	 * labeled alternative in {@link MediatorLangParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitContinueStatement(MediatorLangParser.ContinueStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code increaseStatement}
+	 * labeled alternative in {@link MediatorLangParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterIncreaseStatement(MediatorLangParser.IncreaseStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code increaseStatement}
+	 * labeled alternative in {@link MediatorLangParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitIncreaseStatement(MediatorLangParser.IncreaseStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link MediatorLangParser#statements}.
 	 * @param ctx the parse tree
@@ -770,6 +818,30 @@ public interface MediatorLangListener extends ParseTreeListener {
 	 */
 	void exitNullValue(MediatorLangParser.NullValueContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code clockValue}
+	 * labeled alternative in {@link MediatorLangParser#value}.
+	 * @param ctx the parse tree
+	 */
+	void enterClockValue(MediatorLangParser.ClockValueContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code clockValue}
+	 * labeled alternative in {@link MediatorLangParser#value}.
+	 * @param ctx the parse tree
+	 */
+	void exitClockValue(MediatorLangParser.ClockValueContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code counterValue}
+	 * labeled alternative in {@link MediatorLangParser#value}.
+	 * @param ctx the parse tree
+	 */
+	void enterCounterValue(MediatorLangParser.CounterValueContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code counterValue}
+	 * labeled alternative in {@link MediatorLangParser#value}.
+	 * @param ctx the parse tree
+	 */
+	void exitCounterValue(MediatorLangParser.CounterValueContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code bracketType}
 	 * labeled alternative in {@link MediatorLangParser#type}.
 	 * @param ctx the parse tree
@@ -890,6 +962,18 @@ public interface MediatorLangListener extends ParseTreeListener {
 	 */
 	void exitInitType(MediatorLangParser.InitTypeContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code clockType}
+	 * labeled alternative in {@link MediatorLangParser#type}.
+	 * @param ctx the parse tree
+	 */
+	void enterClockType(MediatorLangParser.ClockTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code clockType}
+	 * labeled alternative in {@link MediatorLangParser#type}.
+	 * @param ctx the parse tree
+	 */
+	void exitClockType(MediatorLangParser.ClockTypeContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code listType}
 	 * labeled alternative in {@link MediatorLangParser#type}.
 	 * @param ctx the parse tree
@@ -937,6 +1021,18 @@ public interface MediatorLangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitStructType(MediatorLangParser.StructTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code counterType}
+	 * labeled alternative in {@link MediatorLangParser#type}.
+	 * @param ctx the parse tree
+	 */
+	void enterCounterType(MediatorLangParser.CounterTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code counterType}
+	 * labeled alternative in {@link MediatorLangParser#type}.
+	 * @param ctx the parse tree
+	 */
+	void exitCounterType(MediatorLangParser.CounterTypeContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code nullType}
 	 * labeled alternative in {@link MediatorLangParser#type}.

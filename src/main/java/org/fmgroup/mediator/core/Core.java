@@ -8,17 +8,24 @@ import org.fmgroup.mediator.common.UtilClass;
 import org.fmgroup.mediator.language.ValidationException;
 import org.fmgroup.mediator.plugin.command.Command;
 import org.fmgroup.mediator.plugin.Plugin;
+import org.fmgroup.mediator.plugins.generators.Run.RunException;
 import org.fmgroup.mediator.plugins.generators.prism.PrismGeneratorException;
 import org.fmgroup.mediator.plugins.simulator.SimulatorException;
 
+import javax.tools.JavaCompiler;
+import javax.tools.ToolProvider;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 
 public class Core {
-    public static void main (String args[]) throws ValidationException, SimulatorException {
+    public static void main (String args[]) throws ValidationException, SimulatorException, RunException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException {
 
         if (args.length == 0) {
+
             /**
              * if no command is provided, we show the default help to users
              */
@@ -60,6 +67,7 @@ public class Core {
 
             System.out.println("please use `<mediator> <command> -h` for further details about commands.");
         } else {
+
             /**
              * if commands are provided, we execute the corresponding command according to the parameters
              * given by users
@@ -74,13 +82,13 @@ public class Core {
                     if (cmdinst.getCommandName().equals(args[0])) {
                         // command found
                         parser = cmdinst.getParamsParser();
-
                         // remove the command name in args
                         String [] subArgs = new String[args.length - 1];
                         Arrays.asList(args).subList(1, args.length).toArray(subArgs);
 
                         // parse args from subargs
                         Namespace parsedArgs = parser.parseArgs(subArgs);
+
                         cmdinst.run(parsedArgs);
                     }
                 } catch (InstantiationException e) {
@@ -89,7 +97,7 @@ public class Core {
                     e.printStackTrace();
                 } catch (ArgumentParserException e) {
                     parser.handleError(e);
-                } catch (java.io.IOException e) {
+                } catch (IOException e) {
                     if (ToolInfo.DEBUG) {
                         e.printStackTrace();
                     } else
